@@ -1,0 +1,27 @@
+<template>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">SF AI Assistant</div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" lwc:dom="manual" data-chat></div>
+
+<!-- This template is for normal LWC rendering -->
+            <template for:each={messages} for:item="msg">
+            <div key={msg.id} class={msg.cssClass}>
+                {msg.text}
+            </div>
+            </template>
+
+        <!-- Typing Indicator -->
+        <template if:true={isLoading}>
+            <div class="bot-message">Thinking...</div>
+        </template>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <input type="text" placeholder="Ask something..." onkeypress={handleKeyPress} data-input />
+            <button onclick={sendMessage}>Send</button>
+        </div>
+    </div>
+</template>
