@@ -1,9 +1,8 @@
 public with sharing class OpenAIAgent {
     
     //private static final String OPENAI_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
-    private static final String OPENAI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyC2ESl0Hc_FvtBLEeamt077s1HNXmKyy88'; 
+    private static final String OPENAI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key="Put your API Key Here"'; 
     //private static final String MODEL = 'google/gemini-2.0-flash-001'; // Updated model name
-    //private static final String API_KEY = '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';
     
 	@AuraEnabled
     public static String askOpenAI(String userQuery) {
